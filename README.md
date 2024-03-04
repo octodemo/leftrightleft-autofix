@@ -11,7 +11,8 @@
 ### 3. Create the synthetic vuln pull request
 1. Create a new file called `package.json` on the root directory.
 2. Enter the following content into that file:
-```{
+```
+{
   "name": "synthetic-xss",
   "version": "1.0.0",
   "description": "A simple example of an XSS vulnerability.",
