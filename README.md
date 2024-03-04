@@ -8,9 +8,13 @@
 1. Navigate to **Settings** the **Code security and analaysis**
 2. Choose default setup
 
-### 3. Create the synthetic vuln pull request
-1. Create a new file called `package.json` on the root directory.
-2. Enter the following content into that file:
+### 3. Create the synthetic vulnerability
+1. Create a new branch
+   
+   ![image](https://github.com/octodemo/leftrightleft-autofix/assets/4910518/cc845cda-17f5-4823-b3a1-c894acef566f)
+
+3. In your new branch, create a new file called `package.json` on the root directory.
+4. Enter the following content into that file:
 ```
 {
   "name": "synthetic-xss",
@@ -27,9 +31,9 @@
   "license": "ISC"
 }
 ```
-3. Commit the `package.json` file to a new branch (named whatever you would like).
-4. Create a new file called `xss.js`
-5. Enter the following content into `xss.js`
+4. Commit the `package.json` file (make sure it's being committed to the branch you just created!)
+5. Create a new file called `xss.js`
+6. Enter the following content into `xss.js`
    ```
    const express = require('express');
 
@@ -37,6 +41,6 @@
    app.get('/', (req, res) => res.send(`Hello, ${req.query.name}!`));
    ```
 
-6. Commit `xss.js` to the same branch as `package.json`
+6. Commit `xss.js` to the branch you just created
 7. Create a new Pull request from the branch you just created.
 8. Alerts!
